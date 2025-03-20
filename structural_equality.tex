@@ -1,0 +1,39 @@
+\section{Structural equality}
+
+\begin{frame}[fragile]{Specification}
+\large
+\begin{minted}{coq}
+Axiom structeq_spec : ∀ `{zoo_G : !ZooG Σ} {v1 v2} footprint,
+  val_traversable footprint v1 →
+  val_traversable footprint v2 →
+  {{{
+    structeq_footprint footprint
+  }}}
+    v1 = v2
+  {{{ b,
+    RET #b;
+    structeq_footprint footprint ∗
+    ⌜(if b then val_structeq else val_structneq) footprint v1 v2⌝
+  }}}.
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Specification for \emph{abstract} values}
+\large
+\begin{minted}{coq}
+Lemma structeq_spec_abstract `{zoo_G : !ZooG Σ} v1 v2 :
+  val_abstract v1 →
+  val_abstract v2 →
+  {{{
+    True
+  }}}
+    v1 = v2
+  {{{ b,
+    RET #b;
+    ⌜(if b then (≈) else (≉)) v1 v2⌝
+  }}}
+Proof.
+  ...
+Qed.
+\end{minted}
+\end{frame}

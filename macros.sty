@@ -1,0 +1,139 @@
+\RequirePackage{xspace}
+\RequirePackage{scalerel}
+
+% ---------------------------------------------------------
+
+\newcommand{\etal}{%
+    \textit{et al.}%
+}
+
+% ---------------------------------------------------------
+
+\newcommand{\mathhyphen}{%
+    {\hbox{-}}%
+}
+
+%----------------------------------------------------------
+
+\makeatletter
+\newcommand{\OCaml}{%
+  \textsc{OCaml}\xspace%
+}
+\newcommand{\Rocq}{%
+  \href{https://coq.inria.fr/}{\textsc{Rocq}}\xspace%
+}
+\newcommand{\Iris}{%
+  \href{https://iris-project.org/}{\textsc{Iris}}\xspace%
+}
+\newcommand{\Zoo}[1][\@nil]{%
+    \href{https://github.com/clef-men/zoo}{\textsc{Zoo}}\def\@tmp{#1}\ifx\@tmp\@nnil \xspace \else \fi%
+}
+\newcommand{\ZooLang}{%
+  \textsc{ZooLang}\xspace%
+}
+\newcommand{\HeapLang}{%
+  \href{https://gitlab.mpi-sws.org/iris/iris/blob/master/docs/heap_lang.md}{\textsc{HeapLang}}\xspace%
+}
+\newcommand{\Cosmo}{%
+    \href{https://gitlab.inria.fr/cambium/cosmo}{\textsc{Cosmo}}\xspace%
+}
+\newcommand{\WhyThree}{%
+  \href{https://www.why3.org/}{\textsc{Why3}}\xspace%
+}
+\newcommand{\WhyML}{%
+  \href{https://www.why3.org/doc/syntaxref.html}{\textsc{WhyML}}\xspace%
+}
+\newcommand{\Gospel}{%
+  \href{https://ocaml-gospel.github.io/gospel/}{\textsc{Gospel}}\xspace%
+}
+\newcommand{\Cameleer}{%
+  \href{https://mariojppereira.github.io/cameleer.html}{\textsc{Cameleer}}\xspace%
+}
+\newcommand{\CFML}{%
+  \href{https://gitlab.inria.fr/charguer/cfml2}{\textsc{CFML}}\xspace%
+}
+\newcommand{\Osiris}{%
+  \href{https://gitlab.inria.fr/fpottier/osiris}{\textsc{Osiris}}\xspace%
+}
+\newcommand{\Diaframe}{%
+  \href{https://gitlab.mpi-sws.org/iris/diaframe}{\textsc{Diaframe}}\xspace%
+}
+\newcommand{\Saturn}{%
+  \href{https://github.com/ocaml-multicore/saturn}{\texttt{Saturn}}\xspace%
+}
+\newcommand{\Eio}{%
+  \href{https://github.com/ocaml-multicore/eio}{\texttt{Eio}}\xspace%
+}
+\newcommand{\Kcas}{%
+  \href{https://github.com/ocaml-multicore/kcas}{\texttt{Kcas}}\xspace%
+}
+\newcommand{\Store}{%
+  \href{https://gitlab.com/basile.clement/store/}{\texttt{Store}}\xspace%
+}
+\newcommand{\Boxroot}{%
+  \href{https://gitlab.com/ocaml-rust/ocaml-boxroot}{\texttt{Boxroot}}\xspace%
+}
+\makeatother
+
+% ---------------------------------------------------------
+
+\newcommand{\loc}{%
+  \ell%
+}
+\newcommand{\inv}{%
+  \iota%
+}
+
+% ---------------------------------------------------------
+
+\newcommand{\Prop}{%
+  \mathrm{Prop}%
+}
+
+\newcommand{\iProp}{%
+  \mathrm{iProp}%
+}
+\newcommand{\iSep}{%
+  \ast%
+}
+\DeclareMathOperator*{\iBigSep}{%
+  \scalerel*{\iSep}{\sum}%
+}
+\newcommand{\iWand}{%
+  \mathrel{-\mkern-6mu\iSep}%
+}
+\newcommand{\iBupd}{%
+  |\!\!\!\Rrightarrow%
+}
+\newcommand{\iPersistent}{%
+  \square%
+}
+\newcommand{\iTrue}{%
+  \mathrm{True}%
+}
+\newcommand{\iFalse}{%
+  \mathrm{False}%
+}
+\newcommand{\iPointsto}{%
+  \mapsto%
+}
+\newcommand{\iPred}{%
+  \Phi%
+}
+\newcommand{\iPredTwo}{%
+  \Psi%
+}
+
+\newcommand{\iAspec}[8]{%
+  \begin{array}{c}
+      \left\lbrace\, #1 \,\right\rbrace
+    \\ \hline
+      \left\langle\, \forall #2 \ldotp #3 \,\right\rangle
+    \\ \hline
+      #4
+    \\ \hline
+      \left\langle\, \exists #5 \ldotp #6 \,\right\rangle
+    \\ \hline
+      \left\lbrace\, #7 \ldotp #8 \,\right\rbrace
+  \end{array}
+}
